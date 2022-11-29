@@ -2,8 +2,8 @@ package Salud;
 
 import java.util.Scanner;
 
-public class Persona1 {
-    
+public class Persona1{
+
     Scanner registro=new Scanner(System.in);
 
     /*Atributos*/
@@ -39,19 +39,20 @@ public class Persona1 {
     public void mostrarPersona(){
         System.out.println("Los datos ingresados fueron: \n Tipo de documento: "+tipoDoc+" \n Número de documento: "+documento+" \n Nombre: "+nombre+" \n Apellido: "+apellido+" \n Peso: "+peso+" \n Estatura: "+estatura+" \n Edad: "+edad+" \n Género: "+genero);
     }
-    public String calcularImc(){
+
+    public void calcularImc(){
         Imc=peso/(Math.pow(estatura, 2));
-        String resultado;
+        System.out.println(Imc);
+
         if(Imc<20){
-            resultado="Peso bajo";
+            System.out.println("El peso esta por debajo de lo ideal.");
         }
         else if(Imc==20 || Imc<=25){
-            resultado="Peso ideal";
+            System.out.println("El peso es ideal");
         }
         else{
-            resultado="Tienes sobrepeso";
+            System.out.println("Tiene sobrepeso");
         }
-        return resultado;
     }
     public void mayorEdad(){
 

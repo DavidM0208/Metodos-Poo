@@ -12,30 +12,55 @@ public class Persona2 {
     public int documento, edad;
     public Double peso, Imc, estatura;
 
-    /*Metodos constructores*/
+    /*Metodos*/
 
-    public Persona2() {
+    public void pedirDatos(){
 
+        System.out.println("Ingrese el tipo de documento");
+        tipoDoc=registro.nextLine();
+        System.out.println("Ingrese el numero de documento");
+        documento=registro.nextInt();
+        registro.nextLine();
+        System.out.println("Ingrese su nombre");
+        nombre=registro.nextLine();
+        System.out.println("Ingrese su apellido");
+        apellido=registro.nextLine();
+        System.out.println("Ingrese su peso en kilogramos");
+        peso=registro.nextDouble();
+        System.out.println("Ingrese su estatura");
+        estatura=registro.nextDouble();
+        System.out.println("Ingrese su edad");
+        edad=registro.nextInt();
+        registro.nextLine();
+        System.out.println("Ingrese su género");
+        genero=registro.nextLine();
     }
-
-    public Persona2(String tipoDoc, String nombre, String apellido, String genero, int documento, int edad, Double peso,
-            Double estatura) {
-        this.tipoDoc = tipoDoc;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.genero = genero;
-        this.documento = documento;
-        this.edad = edad;
-        this.peso = peso;
-        this.estatura = estatura;
+    
+    public void mostrarPersona(){
+        System.out.println("Los datos ingresados fueron: \n Tipo de documento: "+tipoDoc+" \n Número de documento: "+documento+" \n Nombre: "+nombre+" \n Apellido: "+apellido+" \n Peso: "+peso+" \n Estatura: "+estatura+" \n Edad: "+edad+" \n Género: "+genero);
     }
+    public String calcularImc(){
+        Imc=peso/(Math.pow(estatura, 2));
+        String resultado;
+        if(Imc<20){
+            resultado="Peso bajo";
+        }
+        else if(Imc==20 || Imc<=25){
+            resultado="Peso ideal";
+        }
+        else{
+            resultado="Tienes sobrepeso";
+        }
+        return resultado;
+    }
+    public void mayorEdad(){
 
-    public void consultarPersona(String Nombre){
-        if(Nombre.equalsIgnoreCase(nombre)){
-            System.out.println("La persona "+nombre+" "+apellido+" identificado con "+tipoDoc+" de número "+documento+", con "+edad+" años, un peso de "+peso+" kg, una estatura de "+estatura+" y de sexo "+genero);
+        if(edad>18){
+            System.out.println("Eres mayor de edad");
+        }
+        else{
+            System.out.println("Eres menor de edad");
         }
     }
-
-    /*Metodos*/
 
 }
