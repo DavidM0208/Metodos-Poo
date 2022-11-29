@@ -5,13 +5,13 @@ import Salud.Persona1;
 public class Inicio1 {
     public static void main(String[] args) {
         
-        Persona1 datos1=new Persona1();
+        Persona1 datos=new Persona1();
 
-        datos1.pedirDatos();
+        datos.pedirDatos();
 
-        datos1.mostrarPersona();
+        datos.mostrarPersona();
 
-        String resultado = datos1.calcularImc();
+        String resultado = datos.calcularImc();
         System.out.println(resultado);
         if(resultado.equals("Peso bajo")){
             System.out.println("El peso esta por debajo de lo ideal");
@@ -23,7 +23,7 @@ public class Inicio1 {
             System.out.println("Sobrepeso");
         }
         
-        datos1.mayorEdad();
+        datos.mayorEdad();
 
     }
 }
