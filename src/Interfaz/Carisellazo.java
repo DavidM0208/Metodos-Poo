@@ -22,7 +22,7 @@ public class Carisellazo implements pruebaJuego{
     public void jugar(){
         System.out.println("Escoge: "+"1. Cara."+"2. Sello.");
         opcion=sc.nextInt();
-        System.out.println("¡¡...Moneda Girand...!!");
+        System.out.println("¡¡...Moneda Girando...!!");
         Random aleatorio=new Random();
         moneda=aleatorio.nextInt(2)+1;
     }
